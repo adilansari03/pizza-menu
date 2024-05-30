@@ -75,6 +75,7 @@ function Menu() {
           <Pizza key={index} pizzaObj={pizza} />
         ))}
       </ul>
+
       {/* <Pizza
         name="Pizza Spinaci"
         ingredients="Tomato, mozarella, spinach, and ricotta cheese"
