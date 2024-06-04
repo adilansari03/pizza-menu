@@ -83,6 +83,12 @@ function Menu() {
         <p>We're still working on our menu. Please come back later</p>
       )}
 
+      <ul className="pizzas">
+        {pizzaData.map((pizza, index) => (
+          <Pizza key={index} pizzaObj={pizza} />
+        ))}
+      </ul>
+
       {/* <Pizza
         name="Pizza Spinaci"
         ingredients="Tomato, mozarella, spinach, and ricotta cheese"
