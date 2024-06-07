@@ -83,11 +83,11 @@ function Menu() {
         <p>We're still working on our menu. Please come back later</p>
       )}
 
-      <ul className="pizzas">
+      {/* <ul className="pizzas">
         {pizzaData.map((pizza, index) => (
           <Pizza key={index} pizzaObj={pizza} />
         ))}
-      </ul>
+      </ul> */}
 
       {/* <Pizza
         name="Pizza Spinaci"
@@ -106,17 +106,17 @@ function Menu() {
   );
 }
 
-function Pizza(props) {
-  console.log(props);
-  if (props.pizzaObj.soldOut) return null;
+function Pizza({ pizzaObj }) {
+  // console.log(props);
+  // if (pizzaObj.soldOut) return null;
 
   return (
-    <li className="pizza">
-      <img src={props.pizzaObj.photoName} alt="" />
+    <li className={`pizza ${pizzaObj.soldOut ? "sold-out" : ""}`}>
+      <img src={pizzaObj.photoName} alt="" />
       <div>
-        <h4>{props.pizzaObj.name}</h4>
-        <p>{props.pizzaObj.ingredients}</p>
-        <span>{props.pizzaObj.price}</span>
+        <h4>{pizzaObj.name}</h4>
+        <p>{pizzaObj.ingredients}</p>
+        <span>{pizzaObj.soldOut ? "SOLD OUT" : pizzaObj.price}</span>
       </div>
     </li>
   );
